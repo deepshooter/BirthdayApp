@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/done_button"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginBottom="61dp"
+            android:gravity="center"
+            android:text="@string/trust_quote"
+            android:textAppearance="@style/BoldFont"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_regular"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_32dp"
+            android:gravity="center"
+            android:text="@string/please_grant_us_few_permission_to_do_some_magic"
+            android:textAppearance="@style/MediumFont"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/contacts_permission_button"
+                    style="@style/PermissionButton"
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:text="@string/ask_for_contacts_permission_button" />
+
+                <TextView
+                    android:id="@+id/contacts_permission_feedback"
+                    style="@style/PermissionFeedback"
+                    android:layout_width="@dimen/feedback_width"
+                    android:layout_height="@dimen/feedback_height"
+                    android:text="@string/permission_unknown_feedback" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/storage_permission_button"
+                    style="@style/PermissionButton"
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:text="@string/ask_for_storage_permission_button" />
+
+                <TextView
+                    android:id="@+id/storage_permission_feedback"
+                    style="@style/PermissionFeedback"
+                    android:layout_width="@dimen/feedback_width"
+                    android:layout_height="@dimen/feedback_height"
+                    android:text="@string/permission_unknown_feedback" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/all_permissions_button"
+                style="@style/PermissionButton"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="@dimen/all_permission_button_margin_right"
+                android:layout_marginEnd="@dimen/all_permission_button_margin_right"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="@string/ask_for_all_permissions_button" />
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/done_button"
+            style="@style/DoneButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/margin_16dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/done"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

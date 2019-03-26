@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_new_anniversary"
+        android:icon="@drawable/ic_toast"
+        android:title="@string/new_anniversary" />
+    <item
+        android:id="@+id/action_new_birthday"
+        android:icon="@drawable/ic_cake_white"
+        android:title="@string/new_birthday"/>
+
+</menu>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".ui.profile.ProfileActivity">
+
+
+        <com.github.florent37.diagonallayout.DiagonalLayout
+            android:id="@+id/diagonalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="266dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:elevation="0dp"
+            android:paddingBottom="16dp"
+            diagonal:diagonal_angle="10"
+            diagonal:diagonal_direction="left"
+            diagonal:diagonal_position="bottom">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/profile_header_image"
+                android:src="@drawable/header_balloon" />
+
+
+        </com.github.florent37.diagonallayout.DiagonalLayout>
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="190dp"
+            android:background="@drawable/user_profile"
+            android:contentDescription="@string/profile_image_holder"
+            android:elevation="15dp"
+            android:src="@drawable/user_profile" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/diagonalLayout"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/MediumFont"
+                    android:textColor="@color/titleTextColor"
+                    android:textSize="@dimen/text_size_14sp"
+                    tools:text="Avinash Mishra" />
+
+                <TextView
+                    android:id="@+id/days_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_8dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:freezesText="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingLeft="@dimen/padding_8dp"
+                    android:paddingRight="@dimen/padding_8dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/titleTextColor"
+                    android:textSize="@dimen/text_size_small"
+                    tools:text="Turns 22 on Sunday , Oct 9 2019" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_today"
+                    android:contentDescription="@string/birth_date_icon"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_16dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/type_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/birthday"
+                        android:textColor="@color/titleTextColor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/birthday_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textColor"
+                        android:textSize="14sp"
+                        tools:text="Thursday May 02 , 2002" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/zodiac_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_zodiac"
+                    android:contentDescription="@string/zodiac_icon"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_16dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zodiac"
+                        android:textColor="@color/titleTextColor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/zodiac_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textColor"
+                        android:textSize="14sp"
+                        tools:text="Aries" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_gift"
+                    android:contentDescription="@string/gift_icon"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_16dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gifts_suggestion"
+                        android:textColor="@color/titleTextColor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/gift_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/book_watch"
+                        android:textColor="@color/textColor"
+                        android:textSize="14sp"
+                        tools:text="Book , Watch" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <include layout="@layout/transparent_toolbar" />
+
+    </RelativeLayout>
+
+    <io.github.yavski.fabspeeddial.FabSpeedDial
+        android:id="@+id/send_fab_speed_dial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="48dp"
+        app:fabBackgroundTint="@color/colorAccent"
+        app:fabDrawable="@drawable/ic_send"
+        app:fabGravity="bottom_end"
+        app:fabMenu="@menu/profile_fab_menu"
+        android:contentDescription="@string/send_wishes_and_card_button"
+        app:miniFabBackgroundTintList="@array/fab_menu_item_colors"
+        app:miniFabDrawableTint="@android:color/white"
+        app:miniFabTitleTextColorList="@array/fab_menu_item_colors"
+        app:touchGuardDrawable="@drawable/background" />
+
+</android.support.design.widget.CoordinatorLayout>

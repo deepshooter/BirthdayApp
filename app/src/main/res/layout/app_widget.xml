@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_8dp"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/birthday_widget_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_8dp"
+        android:text="@string/add_birthdays_and_anniversaries_widget"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_large" />
+
+    <ListView
+        android:id="@+id/birthday_widget_listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_8dp"
+        android:layout_weight="1"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

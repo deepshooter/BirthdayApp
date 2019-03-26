@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory android:title="@string/pref_title_notifications">
+
+        <SwitchPreference
+            android:backgroundTint="@color/colorAccent"
+            android:defaultValue="true"
+            android:key="@string/notifications_birthday_reminder"
+            android:title="@string/title_birthday_reminder_notification" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/timeArray"
+            android:entryValues="@array/timeValues"
+            android:key="@string/key_notification_time"
+            android:summary="@string/summary_select_notification_time"
+            android:dependency="notifications_birthday_reminder"
+            android:title="@string/title_notification_time" />
+
+        <RingtonePreference
+            android:defaultValue="content://settings/system/notification_sound"
+            android:dependency="notifications_birthday_reminder"
+            android:key="@string/key_notifications_new_message_ringtone"
+            android:ringtoneType="notification"
+            android:summary="@string/summary_choose_ringtone"
+            android:title="@string/pref_title_ringtone" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_vibrate"
+            android:summary="@string/summary_vibrate"
+            android:dependency="notifications_birthday_reminder"
+            android:title="@string/title_vibrate" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

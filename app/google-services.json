@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "222025924972",
+    "firebase_url": "https://birthdayapp-a6cd4.firebaseio.com",
+    "project_id": "birthdayapp-a6cd4",
+    "storage_bucket": "birthdayapp-a6cd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222025924972:android:09599a3a4c1379ff",
+        "android_client_info": {
+          "package_name": "com.deepshooter.birthdayapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222025924972-7j08gg5h1dp5bh0hdl6d4n0eee5ldbh2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deepshooter.birthdayapp",
+            "certificate_hash": "2ac52bcf561adb211d5979bfb0b5d0c95a65822d"
+          }
+        },
+        {
+          "client_id": "222025924972-lnks4ssmhekb32uldauoh6mgar1pn4en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH6cITIlzOaZ3f_Hemc48k36QDPemnk1k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222025924972-lnks4ssmhekb32uldauoh6mgar1pn4en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
