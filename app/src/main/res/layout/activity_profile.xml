@@ -29,25 +29,25 @@
 
 
             <ImageView
+                android:id="@+id/profile_header_imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
+                android:background="@drawable/header_balloon"
                 android:contentDescription="@string/profile_header_image"
-                android:src="@drawable/header_balloon" />
+                android:scaleType="centerCrop" />
 
 
         </com.github.florent37.diagonallayout.DiagonalLayout>
 
         <ImageView
-            android:id="@+id/avatar"
+            android:id="@+id/profile_imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="190dp"
             android:background="@drawable/user_profile"
             android:contentDescription="@string/profile_image_holder"
-            android:elevation="15dp"
-            android:src="@drawable/user_profile" />
+            android:elevation="15dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,7 +126,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/ic_today"
-                    android:contentDescription="@string/birth_date_icon"/>
+                    android:contentDescription="@string/birth_date_icon" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -168,7 +168,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/ic_zodiac"
-                    android:contentDescription="@string/zodiac_icon"/>
+                    android:contentDescription="@string/zodiac_icon" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -206,7 +206,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/ic_gift"
-                    android:contentDescription="@string/gift_icon"/>
+                    android:contentDescription="@string/gift_icon" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -227,7 +227,7 @@
                         android:id="@+id/gift_textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/book_watch"
+                        android:text="@string/book_chocolate"
                         android:textColor="@color/textColor"
                         android:textSize="14sp"
                         tools:text="Book , Watch" />
@@ -247,11 +247,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="48dp"
+        android:contentDescription="@string/send_wishes_and_card_button"
         app:fabBackgroundTint="@color/colorAccent"
         app:fabDrawable="@drawable/ic_send"
         app:fabGravity="bottom_end"
         app:fabMenu="@menu/profile_fab_menu"
-        android:contentDescription="@string/send_wishes_and_card_button"
         app:miniFabBackgroundTintList="@array/fab_menu_item_colors"
         app:miniFabDrawableTint="@android:color/white"
         app:miniFabTitleTextColorList="@array/fab_menu_item_colors"

@@ -31,6 +31,7 @@
                     android:layout_marginTop="@dimen/margin_32dp"
                     android:layout_marginRight="@dimen/margin_16dp"
                     android:layout_marginBottom="@dimen/margin_16dp"
+                    android:id="@+id/profile_imageView"
                     android:background="@drawable/user_profile"
                     android:contentDescription="@string/user_profile_image" />
 

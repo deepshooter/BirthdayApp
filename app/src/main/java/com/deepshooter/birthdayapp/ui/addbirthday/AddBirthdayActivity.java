@@ -46,6 +46,8 @@ public class AddBirthdayActivity extends BaseActivity implements EnterDateDialog
     EditText mDateEditText;
     @BindView(R.id.save_Button)
     Button mSaveButton;
+    @BindView(R.id.profile_imageView)
+    ImageView mProfileImageView;
     private boolean isBirthday, isEdit;
     private List<String> mContactsNameList;
     private String mType;
@@ -109,6 +111,7 @@ public class AddBirthdayActivity extends BaseActivity implements EnterDateDialog
             mPersonNameTextView.setHint(R.string.anniversary_description);
             mImageView.setBackgroundResource(R.drawable.ic_toast);
             mType = AppConstants.TYPE_ANNIVERSARY;
+            mProfileImageView.setBackgroundResource(R.drawable.couple_icon);
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>

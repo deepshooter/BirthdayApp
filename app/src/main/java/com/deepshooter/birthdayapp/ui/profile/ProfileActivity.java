@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -59,6 +60,10 @@ public class ProfileActivity extends BaseActivity {
     LinearLayout mZodiacLayout;
     @BindView(R.id.type_textView)
     TextView mTypeTextView;
+    @BindView(R.id.profile_header_imageView)
+    ImageView mProfileHeaderImageView;
+    @BindView(R.id.profile_imageView)
+    ImageView mProfileImageView;
     private BirthdaysInfo mBirthdaysInfo;
     private AppDatabase mAppDatabase;
 
@@ -93,6 +98,8 @@ public class ProfileActivity extends BaseActivity {
         } else {
             mZodiacLayout.setVisibility(View.GONE);
             mTypeTextView.setText(R.string.anniversary_date);
+            mProfileHeaderImageView.setBackgroundResource(R.drawable.anniversary_background);
+            mProfileImageView.setBackgroundResource(R.drawable.couple_icon);
         }
         mBirthdayTextView.setText(getFullBirthday(mBirthdaysInfo.getBirthday()));
 
