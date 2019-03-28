@@ -25,6 +25,8 @@ import com.deepshooter.birthdayapp.utils.Util;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.deepshooter.birthdayapp.utils.ToastUtils.showToast;
+
 public class SendCardActivity extends BaseActivity {
 
     @BindView(R.id.card_imageView)
@@ -121,7 +123,7 @@ public class SendCardActivity extends BaseActivity {
                 mMessageEditText.setText("");
                 finish();
             } else {
-                Toast.makeText(this, getString(R.string.please_enter_text), Toast.LENGTH_SHORT).show();
+                showToast(getString(R.string.please_enter_text), this);
             }
         }
     }
