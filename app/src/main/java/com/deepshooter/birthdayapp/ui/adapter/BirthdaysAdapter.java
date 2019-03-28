@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -71,9 +72,11 @@ public class BirthdaysAdapter extends RecyclerView.Adapter<BirthdaysAdapter.Birt
             Age age = calculateAge(birthDate);
             int comingAge = age.getYears() + 1;
             if (birthdaysInfo.getType().equalsIgnoreCase(AppConstants.TYPE_BIRTHDAY)) {
-                holder.mDaysTextView.setText(mContext.getString(R.string.turns)+mContext.getString(R.string.space) + comingAge+mContext.getString(R.string.space) + mContext.getString(R.string.on)+mContext.getString(R.string.space) + getComingBirthday(birthdaysInfo.getBirthday()));
+                holder.mProfileImageView.setBackgroundResource(R.drawable.user_profile);
+                holder.mDaysTextView.setText(mContext.getString(R.string.turns) + mContext.getString(R.string.space) + comingAge + mContext.getString(R.string.space) + mContext.getString(R.string.on) + mContext.getString(R.string.space) + getComingBirthday(birthdaysInfo.getBirthday()));
             } else {
-                holder.mDaysTextView.setText(mContext.getString(R.string.anniversary)+mContext.getString(R.string.space) + comingAge+mContext.getString(R.string.space) + mContext.getString(R.string.on)+mContext.getString(R.string.space) + getComingBirthday(birthdaysInfo.getBirthday()));
+                holder.mDaysTextView.setText(mContext.getString(R.string.anniversary) + mContext.getString(R.string.space) + comingAge + mContext.getString(R.string.space) + mContext.getString(R.string.on) + mContext.getString(R.string.space) + getComingBirthday(birthdaysInfo.getBirthday()));
+                holder.mProfileImageView.setBackgroundResource(R.drawable.couple_icon);
             }
 
         }
@@ -104,6 +107,8 @@ public class BirthdaysAdapter extends RecyclerView.Adapter<BirthdaysAdapter.Birt
         TextView mMonthsTextView;
         @BindView(R.id.birthday_layout)
         LinearLayout mBirthdayLayout;
+        @BindView(R.id.profile_imageView)
+        ImageView mProfileImageView;
 
         public BirthdaysViewHolder(@NonNull View itemView) {
             super(itemView);

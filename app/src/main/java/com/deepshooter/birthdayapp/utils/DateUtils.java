@@ -26,6 +26,20 @@ public class DateUtils {
         return null;
     }
 
+    public static String convertDateFormat(String dateString) {
+
+        SimpleDateFormat convertedFormat = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat actualFormat = new SimpleDateFormat("MM/dd/yyyy");
+        try {
+            Date date = actualFormat.parse(dateString);
+            String convertedDate = convertedFormat.format(date);
+            return convertedDate;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static String convertDateInDayFormat(String dateString) {
 
         SimpleDateFormat convertedFormat = new SimpleDateFormat("E, MMM dd");

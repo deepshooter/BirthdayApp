@@ -224,7 +224,7 @@ public class AddBirthdayActivity extends BaseActivity implements EnterDateDialog
 
     @Override
     public void onComplete(String birthday) {
-        mBirthDate = birthday;
+        mBirthDate = DateUtils.convertDateFormat(birthday);
         mDateEditText.setText(DateUtils.convertDateInMonthFormat(birthday));
     }
 }
