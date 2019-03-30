@@ -2,6 +2,7 @@ package com.deepshooter.birthdayapp.ui.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.transition.TransitionManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ public class AnniversaryGreetingsAdapter extends RecyclerView.Adapter<Anniversar
 
     private Context mContext;
     private List<String> mAnniversaryGreetingList;
+    private int mExpandedPosition = RecyclerView.NO_POSITION;
 
     public AnniversaryGreetingsAdapter(Context mContext) {
         this.mContext = mContext;
@@ -35,10 +37,19 @@ public class AnniversaryGreetingsAdapter extends RecyclerView.Adapter<Anniversar
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final AnniversaryGreetingsViewHolder holder, int i) {
-
-        holder.mGreetingsTextView.setText(mAnniversaryGreetingList.get(i));
-
+    public void onBindViewHolder(@NonNull final AnniversaryGreetingsViewHolder holder, int position) {
+        final boolean isExpanded = position == mExpandedPosition;
+        holder.mGreetingsTextView.setText(mAnniversaryGreetingList.get(position));
+        holder.actions.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+        holder.itemView.setActivated(isExpanded);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mExpandedPosition = isExpanded ? -1 : holder.getAdapterPosition();
+                TransitionManager.beginDelayedTransition(holder.viewGroup);
+                notifyDataSetChanged();
+            }
+        });
         holder.mCopyImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +76,11 @@ public class AnniversaryGreetingsAdapter extends RecyclerView.Adapter<Anniversar
         return mAnniversaryGreetingList.size();
     }
 
+    public void setAnniversaryGreetingListData(List<String> anniversaryGreetingList) {
+        mAnniversaryGreetingList = anniversaryGreetingList;
+        notifyDataSetChanged();
+    }
+
     public class AnniversaryGreetingsViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.greetings_textView)
         TextView mGreetingsTextView;
@@ -72,15 +88,15 @@ public class AnniversaryGreetingsAdapter extends RecyclerView.Adapter<Anniversar
         ImageView mCopyImageView;
         @BindView(R.id.share_imageView)
         ImageView mShareImageView;
+        @BindView(R.id.container)
+        ViewGroup viewGroup;
+        @BindView(R.id.actions)
+        ViewGroup actions;
 
         public AnniversaryGreetingsViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
-    }
-    public void setAnniversaryGreetingListData(List<String> anniversaryGreetingList) {
-        mAnniversaryGreetingList = anniversaryGreetingList;
-        notifyDataSetChanged();
     }
 
 }

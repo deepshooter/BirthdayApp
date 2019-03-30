@@ -14,18 +14,31 @@ import android.view.ViewGroup;
 import com.deepshooter.birthdayapp.R;
 import com.deepshooter.birthdayapp.ui.adapter.AnniversaryGreetingsAdapter;
 import com.deepshooter.birthdayapp.utils.AppConstants;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import timber.log.Timber;
 
 public class AnniversaryGreetingsFragment extends Fragment {
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
+    @BindView(R.id.progressBar)
+    View progressBar;
+
     Unbinder unbinder;
+
+    private FirebaseFirestore mFireBaseFireStore;
+    private AnniversaryGreetingsAdapter anniversaryGreetingsAdapter;
 
     @Nullable
     @Override
@@ -37,19 +50,44 @@ public class AnniversaryGreetingsFragment extends Fragment {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mFireBaseFireStore = FirebaseFirestore.getInstance();
+        loadCollections();
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
     }
 
     private void setValues() {
-        if (getArguments() != null) {
-            ArrayList<String> stringArrayList = getArguments().getStringArrayList(AppConstants.IntentKey.ANNIVERSARY_WISH);
-            AnniversaryGreetingsAdapter anniversaryGreetingsAdapter = new AnniversaryGreetingsAdapter(getActivity());
-            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-            mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-            mRecyclerView.setAdapter(anniversaryGreetingsAdapter);
-            anniversaryGreetingsAdapter.setAnniversaryGreetingListData(stringArrayList);
-        }
+        anniversaryGreetingsAdapter = new AnniversaryGreetingsAdapter(getActivity());
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setAdapter(anniversaryGreetingsAdapter);
+    }
+
+    private void loadCollections() {
+        mFireBaseFireStore.collection(AppConstants.FirestoreKey.ANNIVERSARY_COLLECTION_PATH)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        List<String> greetingListData = new ArrayList<>();
+                        if (task.isSuccessful()) {
+                            if (task.getResult() != null)
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    greetingListData.add(document.getData().get(AppConstants.FirestoreKey.ANNIVERSARY_WISH_FIELD).toString());
+                                }
+
+                        } else {
+                            Timber.e(getString(R.string.error_getting_documents));
+                        }
+                        progressBar.setVisibility(View.GONE);
+                        anniversaryGreetingsAdapter.setAnniversaryGreetingListData(greetingListData);
+                    }
+                });
     }
 }
