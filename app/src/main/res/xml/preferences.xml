@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <PreferenceCategory android:title="@string/pref_title_notifications">
 
         <SwitchPreference
@@ -12,11 +11,11 @@
 
         <ListPreference
             android:defaultValue="1"
+            android:dependency="notifications_birthday_reminder"
             android:entries="@array/timeArray"
             android:entryValues="@array/timeValues"
             android:key="@string/key_notification_time"
             android:summary="@string/summary_select_notification_time"
-            android:dependency="notifications_birthday_reminder"
             android:title="@string/title_notification_time" />
 
         <RingtonePreference
@@ -29,11 +28,9 @@
 
         <SwitchPreference
             android:defaultValue="true"
+            android:dependency="notifications_birthday_reminder"
             android:key="@string/key_vibrate"
             android:summary="@string/summary_vibrate"
-            android:dependency="notifications_birthday_reminder"
             android:title="@string/title_vibrate" />
     </PreferenceCategory>
-
-
 </PreferenceScreen>

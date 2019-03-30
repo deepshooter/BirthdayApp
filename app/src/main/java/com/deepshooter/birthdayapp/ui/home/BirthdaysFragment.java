@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.deepshooter.birthdayapp.R;
-import com.deepshooter.birthdayapp.database.AppDatabase;
 import com.deepshooter.birthdayapp.model.BirthdaysInfo;
 import com.deepshooter.birthdayapp.ui.adapter.BirthdaysAdapter;
 import com.deepshooter.birthdayapp.viemmodel.MainViewModel;
@@ -25,7 +24,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import timber.log.Timber;
 
 public class BirthdaysFragment extends Fragment {
 

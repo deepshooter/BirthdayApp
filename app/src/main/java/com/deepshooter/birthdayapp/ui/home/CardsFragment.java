@@ -40,10 +40,7 @@ public class CardsFragment extends Fragment {
     private void setValues() {
         CardsAdapter cardsAdapter = new CardsAdapter(getActivity());
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), CARD_GRID_SIZE));
-        mRecyclerView.addItemDecoration(new ItemDecorationAlbumColumns(
-                getResources().getDimensionPixelSize(R.dimen.card_spacing),
-                CARD_GRID_SIZE));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
         mRecyclerView.setAdapter(cardsAdapter);
         cardsAdapter.setCardData(DataUtils.cardList());
     }

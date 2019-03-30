@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:layout_margin="4dp"
-    app:cardElevation="10dp">
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:id="@+id/birthday_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center|start"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:id="@+id/profile_imageView"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:layout_gravity="start|center"
             android:layout_margin="@dimen/margin_8dp"
-            android:id="@+id/profile_imageView"
             android:background="@drawable/user_profile"
             android:contentDescription="@string/user_profile_place_holder"
             android:scaleType="centerCrop" />
@@ -34,17 +34,16 @@
                 android:id="@+id/name_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Aman"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:textColor="@color/title_text_color"
-                android:textAppearance="@style/MediumFont"
-                android:textSize="@dimen/text_size_14sp" />
+                tools:text="Aman" />
 
             <TextView
                 android:id="@+id/days_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Turns 22 on Sunday ,Oct 9"
-                android:textSize="@dimen/text_size_small" />
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                tools:text="Turns 22 on Sunday ,Oct 9" />
         </LinearLayout>
 
 
@@ -54,9 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_8dp"
             android:gravity="center"
-            android:text="@string/dummy_text"
-            android:textSize="@dimen/text_size_small" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            tools:text="@string/dummy_text" />
 
     </LinearLayout>
-
 </android.support.v7.widget.CardView>

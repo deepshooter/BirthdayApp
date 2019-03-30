@@ -35,15 +35,15 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CardsViewHolder holder,  int i) {
+    public void onBindViewHolder(@NonNull final CardsViewHolder holder, int i) {
 
-        holder.mCardImageView.setBackgroundResource(mCardList.get(i));
+        holder.mCardImageView.setImageResource(mCardList.get(i));
 
         holder.mCardImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,SendCardActivity.class);
-                intent.putExtra(AppConstants.IntentKey.CARD,mCardList.get(holder.getAdapterPosition()));
+                Intent intent = new Intent(mContext, SendCardActivity.class);
+                intent.putExtra(AppConstants.IntentKey.CARD, mCardList.get(holder.getAdapterPosition()));
                 mContext.startActivity(intent);
             }
         });
@@ -55,6 +55,11 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
         return mCardList.size();
     }
 
+    public void setCardData(List<Integer> cardList) {
+        mCardList = cardList;
+        notifyDataSetChanged();
+    }
+
     public class CardsViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.card_imageView)
         ImageView mCardImageView;
@@ -63,11 +68,5 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.CardsViewHol
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
-    }
-
-
-    public void setCardData(List<Integer> cardList) {
-        mCardList = cardList;
-        notifyDataSetChanged();
     }
 }
